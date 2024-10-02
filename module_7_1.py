@@ -14,11 +14,9 @@ class Shop:
         self.__file_name = 'products.txt.txt'
 
     def get_products(self):
-        try:
-            with open(self.__file_name, 'r') as file:
-                return file.read()
-        except FileNotFoundError:
-            return ''
+        with open(self.__file_name, 'r') as file:
+            return file.read()
+
     def add(self, *products):
         current_products = self.get_products()
         with open(self.__file_name, 'a') as file:
